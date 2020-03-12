@@ -12,14 +12,36 @@ public class Lab14avst extends Applet
 {
 	public void paint(Graphics g)
 	{
+		
 		drawGrid(g);
-   }
+
+		Shape1Square square = new Shape1Square(g);
+		Shape2Triangle tri = new Shape2Triangle(g);
+		Shape3Octagon octo = new Shape3Octagon(g);
+		Shape4Circle circle = new Shape4Circle(g);
+		ArrayList<Shape> shapes = new ArrayList();
+		shapes.add(square);
+		shapes.add(tri);
+		shapes.add(octo);
+		shapes.add(circle);
+
+		for ( Shape shape : shapes )
+		{
+
+			shape.drawShape( g );
+			shape.displayName( g );
+			shape.displayNumSides( g );
+
+		}
+		
+	}
 
 	public void drawGrid(Graphics g)
 	{
+		
       g.drawRect(10,10,800,600);
 		g.drawLine(10,300,810,300);
 		g.drawLine(410,10,410,610);
+		
 	}
 }
-
